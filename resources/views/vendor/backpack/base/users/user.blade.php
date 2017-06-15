@@ -39,6 +39,9 @@
 				</div>
 
 				<div class="box-body">
+
+				@include('backpack::inc.message')
+				
 					<table class="table table-bordered">
 						<thead>
 							<tr>	
@@ -54,7 +57,9 @@
 							<tr id="event{{$row->id}}" class="event{{ $row->id_table }}">
 								
 								<td class="text-center">{{$row->name}}</td>
-								<td class="text-center">{{$row->email}}</td>
+								<td class="text-center">
+									<span class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="{{$row->email}}"></span>
+								</td>
 								<td class="text-center">{{$row->phone}}</td>
 								<td class="text-center">{{$row->address}}</td>
 								<td class="text-center">

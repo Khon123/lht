@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Crypt;
             <div class="col-md-8" style="margin-top:80px;">
                 <div class="animated zoomIn">
                     <a href="#">
-                        <img class="img-responsive img-hover" src="frontend/images/cerer.jpg" alt="#">
+                        <img class="img-responsive img-hover" src="{{ asset('uploads/images/career.jpg') }}" alt="#">
                     </a>
                 </div>
                 <hr>

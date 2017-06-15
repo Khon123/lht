@@ -1,3 +1,8 @@
+<?php
+
+use App\Http\Controllers\Helpers\Language;
+
+?>
 @extends('FrontEnd.layout.app')
 
 @section('header')
@@ -52,7 +57,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <h3 class="page-header">
-                    Welcome to LHT Capital
+                
+                    <?php echo Language::getTitleLang()== 'kh'? '<b>ស្វាគមន៍​មកកាន់</b>
+                        LTH Capital': 'Welcome to LHT Capital' ;?>
+                    
                 </h3>
             </div>
         </div>
@@ -74,7 +82,7 @@
 			  	<div class="grid">
 					<div class="animated zoomIn" style="animation-delay: 0.6s;">
 						<figure class="effect-zoe">
-							<img src="{{'uploads/images'}}/{{$home->image}}" alt="img14"/ style="width:100%; height:400px;">
+							<img src="{{ asset('uploads/images').'/'. $home->image }}" alt="img14" style="width:100%; height:400px;">
 							<figcaption>
 								<h3>{{ $home->titleImage }}</h3>
 								<span class="icon-heart"></span>

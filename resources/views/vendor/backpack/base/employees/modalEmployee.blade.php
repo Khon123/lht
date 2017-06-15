@@ -40,7 +40,7 @@
 											<input class="form-control" id="lastName" name="lastName" type="text" />
 										</div>
 										<div class="form-group">
-											<label class="control-label" for="image">Image</label>
+											<label class="control-label" for="image">Avatar</label>
 											<input class="form-control" type="file" name="image" id="image">
 										</div>
 										<div class="form-group ">
@@ -72,7 +72,7 @@
 										</div>
 										<div class="form-group ">
 											<label class="control-label " for="phone">
-												Telephone #
+												Phone
 											</label>
 											<input class="form-control" id="phone" name="phone" type="text"/>
 										</div>

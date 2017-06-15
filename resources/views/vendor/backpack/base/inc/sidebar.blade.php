@@ -29,10 +29,10 @@
 
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/about') }}"><i class="fa fa-list"></i> <span>About</span></a></li>
           
-          <li><a href="{{  url(config('backpack.base.route_prefix', 'admin').'/slide') }}"><i class="fa fa-list"></i> <span>Setup Slider</span></a></li>
+          <li><a href="{{  url(config('backpack.base.route_prefix', 'admin').'/slide') }}"><span class="glyphicon glyphicon-picture"> Slider</span></a></li>
           
           <li class="treeview">
-              <a href=""><i class="fa fa-list"></i><span>Group Company</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href=""><i class="fa fa-group"></i><span>Group Company</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/company') }}"><span>Company</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/subcompany') }}"><span>Sub Company</span></a></li>

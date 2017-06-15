@@ -13,10 +13,7 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div class="form-group">
-									<label class="control-label" for="image">Image</label>
-									<input type="file" class="form-control" name="image" id="image" style="border-radius: 5px">
-								</div>
+
 								<div class="form-group ">
 									<label class="control-label requiredField" for="job_title">
 										Job Title
@@ -26,6 +23,12 @@
 									</label>
 									<input class="form-control" id="job_title" name="job_title" type="text"/>
 								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="image">Image</label>
+									<input type="file" class="form-control" name="image" id="image" style="border-radius: 5px">
+								</div>
+								
 
 								<div class="form-group ">
 									<label class="control-label requiredField" for="job_description">

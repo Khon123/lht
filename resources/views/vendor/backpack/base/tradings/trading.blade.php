@@ -34,6 +34,7 @@
 				</div>
 
 				<div class="box-body">
+					@include('backpack::inc.message')
 					<table class="table table-bordered">
 						<thead>
 							<tr>	

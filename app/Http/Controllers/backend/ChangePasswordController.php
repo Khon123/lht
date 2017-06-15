@@ -47,9 +47,9 @@ class ChangePasswordController extends Controller
             $user->password = bcrypt(Input::get('newPassword'));
             $user->save();
 
-            return redirect(url(config('backpack.base.route_prefix', 'admin').'/user'))->with('success', 'Password Changed.');
+            return redirect(url(config('backpack.base.route_prefix', 'admin').'/user'))->with('message', 'Password Changed.')->with('type','success');
         }else{
-            return redirect(url(config('backpack.base.route_prefix', 'admin').'/user'))->with('errors', 'Password Not changed Please try again!');
+            return redirect(url(config('backpack.base.route_prefix', 'admin').'/user'))->with('message', 'Password Not changed Please try again!')->with('type','danger');
         }
     }
     /**

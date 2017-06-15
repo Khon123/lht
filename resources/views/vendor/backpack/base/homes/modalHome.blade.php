@@ -21,7 +21,7 @@
 									<form method="post">
 										<div class="form-group">
 											<label class="control-label requiredField" for="title">
-												Title
+												Company Name
 												<span class="asteriskField">
 													*
 												</span>
@@ -31,7 +31,7 @@
 
 										<div class="form-group ">
 											<label class="control-label " for="titleDetial">
-												Title Detial
+												Caption
 											</label>
 											<textarea name="titleDetial" id="titleDetial" class="form-control my-editor"></textarea>
 										</div>

@@ -49,7 +49,7 @@
 							<tr id="event{{$row->id}}" class="event{{ $row->id_table }}">
 								
 								<td class="text-center">{{$row->title}}</td>
-								<td class="text-center">{{$row->image}}</td>
+								<td class="text-center"><img style="width: 50px; height: 50px;" src="{{ url(''). '/uploads/images/'. $row->image }}"></td>
 								<td class="text-center">{{$row->titleImage}}</td>
 								<td class="text-center">{{$row->status}}</td>
 								<td class="text-center">
@@ -95,10 +95,24 @@
 		$.get(url + '/' + id, function (data) {
 		    //success data
 			console.log(data);
+			var titleDetial = data.titleDetial;
+			var imageDetial = data.imageDetial;
 			$('#title').val(data.title);
-			tinymce.editors['titleDetial'].setContent(data.titleDetial);
+
+			if(titleDetial == null){
+				tinymce.editors['titleDetial'].setContent('');
+			}else{
+				tinymce.editors['titleDetial'].setContent(data.titleDetial);
+			}
+			
 			$('#titleImage').val(data.titleImage);
-			tinymce.editors['imageDetial'].setContent(data.imageDetial);
+			
+			if(imageDetial == null){
+				tinymce.editors['imageDetial'].setContent('');
+			}else{
+				tinymce.editors['imageDetial'].setContent(data.imageDetial);
+			}
+			
 			$('#status').val(data.status);
 
 			$('#myModal').modal('show');

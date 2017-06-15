@@ -91,6 +91,10 @@ class TradingController extends Controller
     {
         $trading = Trading::find($id);
         $trading->title = $request->title;
+
+        if($request->description == null){
+            return redirect(url(config('backpack.base.route_prefix', 'admin').'/trading'))->with('message', 'Caption can not be blank!')->with('type', 'danger');
+        }
         $trading->description = $request->description;
         $trading->status = $request->status;
         $trading->updated_by = auth::id();

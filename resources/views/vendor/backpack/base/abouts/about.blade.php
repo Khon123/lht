@@ -34,6 +34,7 @@
 				</div>
 
 				<div class="box-body">
+					@include('backpack::inc.message')
 					<table class="table table-bordered">
 						<thead>
 							<tr>	
@@ -95,8 +96,17 @@
 		$.get(url + '/' + id, function (data) {
 		    //success data
 			console.log(data);
+			var detial = data.detial;
+
 			$('#title').val(data.title);
-			tinymce.editors['detial'].setContent(data.detial);
+
+			if(detial == null){
+				tinymce.editors['detial'].setContent('');
+			}else{
+				tinymce.editors['detial'].setContent(data.detial);
+			}
+
+			
 			$('#status').val(data.status);
 
 			$('#myModal').modal('show');

@@ -34,6 +34,7 @@
 				</div>
 
 				<div class="box-body">
+				
 					<table class="table table-bordered">
 						<thead>
 							<tr>	
@@ -97,10 +98,18 @@
 		$.get(url + '/' + id, function (data) {
 		    //success data
 			console.log(data);
+
+			var detial = data.detial;
 			$('#name').val(data.name);
 			$('#url').val(data.url);
 			$('#name').val(data.name);
-			tinymce.editors['detial'].setContent(data.detial);
+
+			if(detial != null){
+				tinymce.editors['detial'].setContent(data.detial);
+			}else{
+				tinymce.editors['detial'].setContent('');
+			}
+			
 			$('#status').val(data.status);
 
 			$('#myModal').modal('show');

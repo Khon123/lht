@@ -10,9 +10,10 @@
     <meta name="author" content="">
 
     <title>LHT Capital</title>
+    <link href="{{ asset('frontend/images/Logo/Logo LHT.png') }}" rel="shortcut icon">
     <link href="{{ asset('frontend/bootstrap/') }}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ asset('frontend/bootstrap/') }}/css/bootstrap.css" rel="stylesheet">
-	<link rel="{{ asset('frontend/bootstrap/') }}/stylesheet" href="css/animate.css">
+	<link href="{{ asset('frontend/bootstrap/') }}/stylesheet" rel="css/animate.css">
     <link href="{{ asset('frontend/bootstrap/') }}/css/animate.min.css" rel="stylesheet">
     <link href="{{ asset('frontend/bootstrap/') }}/css/modern-business.css" rel="stylesheet">
     <link href="{{ asset('frontend/bootstrap/') }}/css/font-awesome.min.css" rel="stylesheet">
@@ -37,7 +38,7 @@
     <script src="{{ asset('frontend/bootstrap/') }}/js/bootstrap.min.js"></script>
 
     <script src="{{ asset('frontend/bootstrap/') }}/js/jqBootstrapValidation.js"></script>
-    <script src="{{ asset('frontend/bootstrap/') }}/js/contact_me.js"></script>
+    {{-- <script src="{{ asset('frontend/bootstrap/') }}/js/contact_me.js"></script> --}}
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({

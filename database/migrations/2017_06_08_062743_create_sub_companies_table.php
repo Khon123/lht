@@ -18,9 +18,9 @@ class CreateSubCompaniesTable extends Migration
             $table->integer('id_table')->unsigned();
             $table->string('name');
             $table->string('alias');
-            $table->string('image');
-            $table->text('url');
-            $table->longText('detial');
+            $table->string('image')->nullable()->default(null);
+            $table->text('url')->nullable()->default(null);
+            $table->longText('detial')->nullable()->default(null);
             $table->enum('status',['Enabled','Disabled'])->default('Enabled');
             $table->integer('created_by')->unsigned()->nullable()->default(null);
             $table->integer('updated_by')->unsigned()->nullable()->default(null);

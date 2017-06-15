@@ -7,7 +7,7 @@ use App\Http\Controllers\Helpers\Language;
 
 @section('content')
 	<!-- Page Content -->
-    <div class="container">
+    <div class="container" style="margin-bottom: 50px;">
         <div class="row" style=" margin-top: 80px;">
             <div class="col-lg-12">
                 <h3 class="page-header"><?php echo Language::getTitleLang()=='kh'?"អំពីយើងខ្ញុំ":"About Us"; ?></h3>

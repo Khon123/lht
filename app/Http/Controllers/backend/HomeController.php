@@ -107,7 +107,7 @@ class HomeController extends Controller
             if($validator->passes()){
                 $image = $request->file('image');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->resize(300, 300)->save( public_path('/uploads/images/' . $filename ) );
+                $image->move(public_path('/uploads/images/') , $filename );
 
                 $home->image = $filename;
             }

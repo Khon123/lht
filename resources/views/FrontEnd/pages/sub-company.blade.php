@@ -39,7 +39,7 @@ use App\Http\Controllers\Helpers\Language;
 		</a>
 		<div class="animated bounceInDown">
 			<p><?php echo html_entity_decode($subCompany->detial);?></p>
-			<h4>To visit {{ $subCompany->name }}, <a href="https://{{ $subCompany->url }}" target="_blank"  style="background:none;">Click here</a></h4>
+			<h4><?php echo Language::getTitleLang()=='kh'?'ទស្សនា': 'To visit'; ?> {{ $subCompany->name }}, <a href="https://{{ $subCompany->url }}" target="_blank"  style="background:none;"><?php echo Language::getTitleLang()=='kh'?'ចុច​ទីនេះ': 'Click here'; ?></a></h4>
 		</div><!-- close animated bounceInDown-->
 	</div>
 </div>

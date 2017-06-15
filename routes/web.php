@@ -143,7 +143,7 @@ Route::get('/career/{id?}', 'frontend\CareerFrontendController@showCareer');
 // Route Contact Us
 
 Route::get('/contact', 'frontend\ContactController@getIndex');
-Route::post('/contact', 'frontend\ContactController@sendEmail');
+Route::post('/contact', 'frontend\SendMailController@sendMail');
 
         
 

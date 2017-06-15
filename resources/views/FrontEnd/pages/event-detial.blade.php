@@ -18,7 +18,7 @@
                     <h3 style="margin-top: 15px" >
                         <b><?php echo date('d-m-y', strtotime($event->event_date)); ?></b>
                     </h3>
-                    <p style="margin-top: 25px;" >{{ $event->description }}</p>
+                    <p style="margin-top: 25px;" ><?php echo html_entity_decode($event->description);?></p>
                 </div>
             </div>
             <!-- /.row -->

@@ -21,7 +21,7 @@
 									<form method="post">
 										<div class="form-group">
 											<label class="control-label requiredField" for="title">
-												Title
+												Company Name
 												<span class="asteriskField">
 													*
 												</span>

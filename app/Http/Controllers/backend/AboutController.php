@@ -94,6 +94,11 @@ class AboutController extends Controller
 
         $home = About::find($id);
         $home->title = $request->title;
+        
+        if($request->detial == null){
+            return redirect(config('backpack.base.route_prefix', 'admin').'/about')->with('message', 'detial can not be blank!')->with('type', 'danger');
+        }
+
         $home->detial = $request->detial;
         $home->status = $request->status;
         $home->updated_by = auth::id();

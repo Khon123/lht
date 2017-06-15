@@ -21,9 +21,9 @@
 
         @if (Auth::guest())
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/login') }}">{{ trans('backpack::base.login') }}</a></li>
-            @if (config('backpack.base.registration_open'))
+            {{-- @if (config('backpack.base.registration_open'))
             <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/register') }}">{{ trans('backpack::base.register') }}</a></li>
-            @endif
+            @endif --}}
         @else
 
             <li style="width:54px;padding-top: 15px;">

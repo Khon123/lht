@@ -70,8 +70,8 @@
 								<td class="text-center">{{$row->firstName}}</td>
 								<td class="text-center">{{$row->lastName}}</td>
 								<td class="text-center">{{$row->gender}}</td>
-								<td class="text-center">{{$row->image}}</td>
-								<td class="text-center">{{$row->email}}</td>
+								<td class="text-center"><img src="{{ url('uploads/images/'. $row->image )}}" style="width: 50px; height: 50px;"></td>
+								<td class="text-center"><span class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="{{$row->email}}"></span></td>
 								<td class="text-center">{{$row->status}}</td>
 								<td class="text-center">
 									<button class="edit_data btn btn-info open-modal" id="edit-modal" value="{{$row->id}}">
@@ -132,13 +132,21 @@
 		$.get(url + '/' + employee_id, function (data) {
             //success data
             console.log(data);
+
+            var detial = data.detial;
             $('#firstName').val(data.firstName);
             $('#lastName').val(data.lastName);
             $('#gender').val(data.gender);
             $('#phone').val(data.phone);
             $('#email').val(data.email);
             $('#address').val(data.address);
-            tinymce.editors['detial'].setContent(data.detial);
+
+            if(detial != null){
+                tinymce.editors['detial'].setContent(data.detial);
+            }else{
+                tinymce.editors['detial'].setContent('');
+            }
+            
             $('#status').val(data.status);
          });
 	});

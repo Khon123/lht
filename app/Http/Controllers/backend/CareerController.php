@@ -89,6 +89,9 @@ class CareerController extends Controller
                 $career->image = $filename;
             }
             $career->id_table        = $id_table;
+            if($request->job_title == null){
+                return redirect(url(config('backpack.base.route_prefix', 'admin').'/career'))->with('message', 'Job title can not be blank!, please try again')->with('type', 'danger');
+            }
             $career->job_title       = $request->job_title;
             $career->job_description = $request->job_description;
             $career->job_requirement = $request->job_requirement;

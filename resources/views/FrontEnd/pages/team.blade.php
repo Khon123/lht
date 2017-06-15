@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Helpers\Language;
 use Illuminate\Support\Facades\Crypt;
 
 ?>
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Crypt;
     <div class="container" >
     	<div class="row">
         	<div class="col-lg-12" style="margin-top: 100px;">
-        	   <h3>Our Team</h3>
+        	   <h3 ><?php echo Language::getTitleLang()=='kh'?"ក្រុម​របស់​យើង":"Our Team"; ?></h3>
+            <hr style="margin-bottom: 50px;">
         	</div>
     	</div>
 		<div class="row">
@@ -28,7 +30,7 @@ use Illuminate\Support\Facades\Crypt;
                         <h3>
                             <?php $id = Crypt::encrypt($team->id); ?>
                             
-                            <a href="{{ url(''). "/team/$id" }}" style="background:none;">{{$team->lastName . ' ' . $team->firstName}}</a>
+                            <a href="{{ url(''). "/team/$id" }}" style="background:none;">{{$team->firstName . ' ' . $team->lastName}}</a>
                         </h3>
                         <p><?php echo html_entity_decode($team->detial); ?></p>
 

@@ -65,7 +65,9 @@
 						@foreach($datas as $row)
 						<tr id="slide{{$row->id}}" class="slide{{ $row->id_table }}">
 							<td class="text-center">{{$row->article->name}}</td>
-							<td class="text-center"><img src="{{url("/uploads/images/",$row->image)}}" style="height: 80; width: 80px;"></td>
+							<td class="img text-center">
+								<img style="width: 50px; height: 50px;" src="{{ url(''). '/uploads/images/'. $row->image }}">
+								
 							{{-- <td class="text-center">{{$row->description}}</td> --}}
 							<td class="text-center">{{$row->status}}</td>
 							<td class="text-center">
@@ -186,6 +188,8 @@
     		}
     	});
     });
+
+				
 
 </script>
 

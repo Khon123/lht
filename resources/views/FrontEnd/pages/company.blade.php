@@ -11,7 +11,7 @@ use App\Http\Controllers\Helpers\Language;
     <div class="container" >
 		 <div class="row">
 		 <div class="col-lg-12" style="margin-top:80px;">
-            <h3><?php echo Language::getTitleLang()=='kh'?"ទិដ្ឋភាពទូទៅ":"OverView"; ?></h3>
+            <h3><?php echo Language::getTitleLang()=='kh'?"<b>ទិដ្ឋភាពទូទៅ</b>":"OverView"; ?></h3>
 			<hr>
 		</div>
         </div>
@@ -39,7 +39,7 @@ use App\Http\Controllers\Helpers\Language;
 				<?php $count = 1 ?>
 				@foreach($companys as $company)
 					<div class="col-md-6">
-						<div class="pull-right">
+						<div class="pull-center">
 							<img src="{{asset('uploads/images')}}/{{$company->image}}" style="width:110px; height:129px; padding:2px; margin-left:80px;">
 							<p>{{ $company->description }}</p>
 							<h4><a href="https://{{ $company->url }}" target="_blank" style="background:none;">{{ $company->url }}</a></h4>

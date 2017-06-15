@@ -80,7 +80,8 @@ class SliderController extends Controller
             $slide = new Slider();
 
             $slide->id_table    = $id_table;
-            $slide->article_id  = $request->article_id;
+            
+            $slide->article_id  = $request->article_id;    
 
             if($key =='kh'){
                 $slide->image = $filename;
@@ -135,7 +136,10 @@ class SliderController extends Controller
           ]);
 
         $slide               = Slider::find($slide_id);
-        $slide->article_id   = $request->article_id;
+        
+        if( Language::getTitleLang()== 'en' ){
+            $slide->article_id  = $request->article_id;
+        }
 
         if($request->hasFile('image')){
             if($validator->passes()){

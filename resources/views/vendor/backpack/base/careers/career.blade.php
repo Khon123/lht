@@ -44,6 +44,7 @@
 			</div>
 
 			<div class="box-body">
+				@include('backpack::inc.message')
 				{{-- table career --}}
 				<div class="table" id="table">
 					<table class="table table-bordered">
@@ -136,8 +137,21 @@
             //success data
             console.log(data);
             $('#job_title').val(data.job_title);
-            tinymce.editors['job_description'].setContent(data.job_description);
-            tinymce.editors['job_requirement'].setContent(data.job_requirement);
+
+            var job_description = data.job_description;
+            var job_requirement = data.job_requirement;
+
+            if(job_description == null ){
+            	tinymce.get('job_description').setContent('');
+            }else{
+            	tinymce.editors['job_description'].setContent(data.job_description);
+            }
+            if(job_requirement == null){
+            	tinymce.get('job_requirement').setContent('');
+            }else{
+            	tinymce.editors['job_requirement'].setContent(data.job_requirement);
+            }
+                      
             $('#post_date').val(data.post_date);
             $('#close_date').val(data.close_date);
             $('#status').val(data.status);
@@ -172,5 +186,6 @@
 			return false;
 		}
 	});
+
 </script>
 @stop

@@ -63,8 +63,8 @@
 							
 							<td class="text-center">{{$row->title}}</td>
 							<td class="text-center"><?php echo date("d-m-Y", strtotime($row->event_date)); ?></td>
-							<td class="text-center">{{$row->image}}</td>
-							<td class="text-center">{{$row->description}}</td>
+							<td class="text-center"><img src="{{ url('uploads/images/'. $row->image) }} " style="width: 50px;height: 50px;"></td>
+							<td class="text-center"><?php echo substr($row->description, 0, 25) .' ...';?></td>
 							<td class="text-center">{{$row->status}}</td>
 							<td class="text-center">
 								<button class="edit_data btn btn-info open-modal" id="edit-modal" value="{{$row->id}}">
@@ -126,9 +126,17 @@
 	        $.get(url + '/' + event_id, function (data) {
 	            //success data
 	            console.log(data);
+
+	            var description = data.description;
 	            $('#title').val(data.title);	
-	            $('#event_date').val(data.event_date);   
-	            $('#description').val(data.description);	            
+	            $('#event_date').val(data.event_date);  
+
+	            if(description != null){
+	            	tinymce.editors['description'].setContent(data.description);
+	            }else{
+	            	tinymce.editors['description'].setContent('');
+	            }
+	             	            
 	            $('#status').val(data.status);
 	              
 	            // show modal
