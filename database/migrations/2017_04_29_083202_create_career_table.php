@@ -9,8 +9,7 @@ class CreateCareerTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
-     */
+     * @return void     */
     public function up()
     {
         Schema::create('careers', function (Blueprint $table) {

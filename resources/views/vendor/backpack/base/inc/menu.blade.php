@@ -1,3 +1,6 @@
+<?php
+use App\Http\Controllers\Helpers\Language;
+?>
 <div class="navbar-custom-menu pull-left">
     <ul class="nav navbar-nav">
         <!-- =================================================== -->
@@ -36,7 +39,7 @@
                 <input type="submit" name="lang" value="KH" style="background: red ;border:0px;">
               </form>
             </li> 
-            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i class="fa fa-btn fa-sign-out"></i><?php echo Language::getTitleLang()=='en'?'Logout':'ចាកចេញពីកម្មវិធី'?></a></li>
         @endif
 
        <!-- ========== End of top menu right items ========== -->
